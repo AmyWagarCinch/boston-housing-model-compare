@@ -16,14 +16,13 @@ model = pickle.load(open('trained_model.pkl','rb'))
 @app.route("/")
 @app.route("/home")
 def home():
-    #result = loaded_model.score(X_test, y_test)
-    #print(result)
-    result = model.predict([[55, 18, 0, 1, 1]])
-    return render_template('home.html', prediction_text='Apparently this worked: $ {}'.format(result))
+    return render_template('home.html')
 
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    result = model.predict([[55, 18, 0, 1, 1]])
+    return render_template('about.html', prediction_text='Apparently this worked: $ {}'.format(result))
+    
 
 if __name__ == "__main__":
     app.run(port=5001)
