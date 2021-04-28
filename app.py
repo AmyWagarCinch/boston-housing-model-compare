@@ -4,6 +4,7 @@ from flask import render_template
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 import pickle
+import numpy as np
 import try_model
 
 app = Flask(__name__)
@@ -20,17 +21,23 @@ def home():
     
     return render_template('home.html')
 
-@app.route("/about", methods = ['GET'])
+@app.route("/about", methods=['GET', 'POST'])
 def about():
     return render_template('about.html')
     #result = model.predict([[55, 18, 0, 1, 1]])
     #return render_template('about.html', prediction_text='Apparently this worked: $ {}'.format(result))
     
 
-@app.route("/submit", methods = ['POST'])
+@app.route("/submit", methods=['GET', 'POST'])
 def submit():
-    select = request.form.get('value')
-    return select
+    #select = request.form.get('value')
+    #return select
+    #return(str(select)) //yields "none"
+
+    int_features = [int(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    #return final_features // TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a list.
+    return(str(final_features))
 
     variable = try_model.try_function()
     return render_template('about.html',prediction_text='Did this work? {}'.format(variable))
