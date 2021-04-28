@@ -22,9 +22,9 @@ def home():
     
     return render_template('home.html')
 
-@app.route("/about", methods=['GET', 'POST'])
-def about():
-    return render_template('about.html')
+@app.route("/yourTurn", methods=['GET', 'POST'])
+def yourTurn():
+    return render_template('yourTurn.html')
     #result = model.predict([[55, 18, 0, 1, 1]])
     #return render_template('about.html', prediction_text='Apparently this worked: $ {}'.format(result))
     
