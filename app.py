@@ -13,7 +13,8 @@ app = Flask(__name__)
 #loaded_model = pickle.load(open('homepriceModel_trained.sav', 'rb'))
 #result = loaded_model.score(X_test, y_test)
 #Check the pickle file by inputing the variables
-model = pickle.load(open('trained_model.pkl','rb'))
+#model = pickle.load(open('trained_model.pkl','rb'))
+bloop = []
 
 @app.route("/")
 @app.route("/home")
@@ -30,18 +31,16 @@ def about():
 
 @app.route("/submit", methods=['GET', 'POST'])
 def submit():
-    #select = request.form.get('value')
-    #return select
-    #return(str(select)) //yields "none"
+    #def passIn():
 
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    #return final_features // TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a list.
-    #return(str(final_features)) // returned [array([3, 4, 5])] on http://127.0.0.1:5001/submit
-    return render_template('about.html',prediction_text='Did this work? {}'.format(final_features))
-    
-    #variable = try_model.try_function()
-    #return render_template('about.html',prediction_text='Did this work? {}'.format(variable))
+    bloop = [int(x) for x in request.form.values()]
+    #froop = request.form.labels()
+        #return bloop
+
+    output = try_model.try_function(bloop)
+    #return render_template('about.html',prediction_text='Testing Model Accuracy: {}'.format(variable))
+    #return render_template('about.html',prediction_text=f"{output} for {froop}")
+    return render_template('about.html',prediction_text=output)
 
 if __name__ == "__main__":
     app.run(port=5001)
