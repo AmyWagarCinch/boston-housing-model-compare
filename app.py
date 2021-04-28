@@ -37,10 +37,11 @@ def submit():
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     #return final_features // TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a list.
-    return(str(final_features))
-
-    variable = try_model.try_function()
-    return render_template('about.html',prediction_text='Did this work? {}'.format(variable))
+    #return(str(final_features)) // returned [array([3, 4, 5])] on http://127.0.0.1:5001/submit
+    return render_template('about.html',prediction_text='Did this work? {}'.format(final_features))
+    
+    #variable = try_model.try_function()
+    #return render_template('about.html',prediction_text='Did this work? {}'.format(variable))
 
 if __name__ == "__main__":
     app.run(port=5001)
