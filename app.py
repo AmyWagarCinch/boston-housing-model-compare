@@ -40,7 +40,7 @@ def submit():
     output = try_model.try_function(bloop)
     #return render_template('about.html',prediction_text='Testing Model Accuracy: {}'.format(variable))
     #return render_template('about.html',prediction_text=f"{output} for {froop}")
-    return render_template('about.html',prediction_text=output)
+    return render_template('yourTurn.html',prediction_text=output)
 
 if __name__ == "__main__":
     app.run(port=5001)
