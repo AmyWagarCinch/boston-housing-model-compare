@@ -8,9 +8,9 @@
   <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -35,7 +35,7 @@
       <hr class="col-md-12">
       <div class="row"></div>
         <div class="col-md-6">
-          <img src="../Resources/assets/images/BHPfigure1.png" alt="image">
+          <img src="{{ url_for('static', filename='BHPfigure1.png') }}" alt="image">
           <p>This is a Machine Learning project done to compare different models using basic Linear Regression and Random forest Machine Learning concepts. The <a href="https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html">Boston Dataset</a> was collected in 1978 with 506 entries and 13 Variables. Each variable represents different features for homes in various suburbs in Boston, Massachusetts. Here is a list of all the features in the original dataset:
             <ul> 
                 <li>Crime Rate: per capita crime rate by town</li>
