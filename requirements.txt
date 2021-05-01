@@ -2,24 +2,15 @@ Flask==1.1.2
 flask_sqlalchemy>=2.0.0
 gunicorn==20.1.0
 jupyter==1.0.0
-jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1594826976318/work
-jupyter-console==6.1.0
-jupyter-core==4.6.3
-jupyterlab==2.1.5
 matplotlib @ file:///C:/ci/matplotlib-suite_1613408055530/work
 numpy==1.18.5
-packaging==20.4
 pandas @ file:///C:/ci/pandas_1592833613419/work
 pandocfilters==1.4.2
 pandas @ file:///C:/ci/pandas_1608056614942/work
-pyspark @ file:///tmp/build/80754af9/pyspark_1614711862986/work
 requests @ file:///tmp/build/80754af9/requests_1608241421344/work
 requests-oauthlib==1.3.0
 scikit-image==0.16.2
 scikit-learn @ file:///C:/ci/scikit-learn_1614446902030/work
 scipy @ file:///C:/ci/scipy_1597675683670/work
 seaborn==0.11.1
-Shapely==1.7.1
 SQLAlchemy>=1.3.11
-Werkzeug==0.16.1
-zipp @ file:///tmp/build/80754af9/zipp_1615904174917/work
